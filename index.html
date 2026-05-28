@@ -386,7 +386,7 @@ async function chargerDonnees(){
       id:String(r[0]),cat:r[1],poste:r[2],note:r[3],
       montant:parseFloat(r[4])||0,date:String(r[5]).split('T')[0],
       month:parseInt(r[6]),year:parseInt(r[7]),operateur:r[8]||''
-    })).filter(d=>d.cat);
+    })).filter(d=>d.cat&&d.operateur==='clemence');
   }catch(e){toast('⚠️ Erreur connexion')}
   loader(false);
   renderAll();
